@@ -8,9 +8,6 @@ const ContactList = () => {
 
   return (
     <div>
-      {!contacts.length ? (
-        <p>We did not find any contacts</p>
-      ) : (
         <ul className={css.contactList}>
           {contacts.map((contact) => (
             <li key={contact.id}>
@@ -18,7 +15,6 @@ const ContactList = () => {
             </li>
           ))}
         </ul>
-      )}
     </div>
   );
 };

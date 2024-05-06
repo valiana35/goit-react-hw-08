@@ -8,7 +8,7 @@ import { fetchContacts } from "../redux/contacts/operations";
 import DocumentTitle from "../components/DocumentTitle";
 import ContactForm from "../components/ContactForm/ContactForm";
 import { useEffect } from "react";
-import SearchBox from "../components/UserMenu/SearchBox/SearchBox";
+import SearchBox from "../components/SearchBox/SearchBox";
 import ContactList from "../components/ContactList/ContactList";
 
 function ContactPage() {
@@ -28,7 +28,7 @@ function ContactPage() {
       <SearchBox />
       {isLoading && <p className="text">Loading...</p>}
       {error && <p className="text">Something went wrong...</p>}
-      {contacts.length && <ContactList />}
+      {contacts && <ContactList />}
     </>
   );
 }

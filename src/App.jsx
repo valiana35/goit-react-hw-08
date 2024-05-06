@@ -8,7 +8,7 @@ import Layout from './components/Layout';
 import { RestrictedRoute } from './components/RestrictedRoute';
 
 const HomePage = lazy(() => import('./pages/HomePage'));
-const ContactPage = lazy(() => import('./pages/ContactsPage'));
+const ContactsPage = lazy(() => import('./pages/ContactsPage'));
 const LoginPage = lazy(() => import('./pages/LoginPage'));
 const RegistrationPage = lazy(() => import('./pages/RegistrationPage'));
 
@@ -28,10 +28,10 @@ function App() {
                 <Route path='/' element={<HomePage />} />
                 <Route path='/register' element={<RestrictedRoute redirectTo='/contacts' component={<RegistrationPage />} />} />
                 <Route path='/login' element={<RestrictedRoute redirectTo='/contacts' component={<LoginPage />} />} />
-                <Route path='/contacts' element={<RestrictedRoute redirectTo='/login' component={<ContactPage />} />} />
+                <Route path='/contacts' element={<RestrictedRoute redirectTo='/login' component={<ContactsPage />} />} />
             </Routes>
         </Layout>
     )
 }
 
-export default App
+export default App;
