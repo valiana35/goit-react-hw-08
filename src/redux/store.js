@@ -20,11 +20,9 @@ import { authReducer } from "./auth/slice";
     whitelist: ['token'],
   };
   
-  const persistedReducer = persistReducer(authPersistConfig, authReducer);
-  
   export const store = configureStore({
     reducer: {
-      auth: persistedReducer,
+      auth: persistReducer(authPersistConfig, authReducer),
       contacts: contactsReducer, 
       filters: filtersReducer,
     },

@@ -11,7 +11,7 @@ import { useEffect } from "react";
 import SearchBox from "../components/SearchBox/SearchBox";
 import ContactList from "../components/ContactList/ContactList";
 
-function ContactPage() {
+function ContactsPage() {
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
   const error = useSelector(selectError);
@@ -33,4 +33,4 @@ function ContactPage() {
   );
 }
 
-export default ContactPage;
+export default ContactsPage;

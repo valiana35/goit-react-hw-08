@@ -1,7 +1,7 @@
 import DocumentTitle from '../components/DocumentTitle';
 import LoginForm from '../components/LoginForm/LoginForm';
 
-export default function LoginPage() {
+function LoginPage() {
   return (
     <div>
       <DocumentTitle>Login</DocumentTitle>
@@ -9,3 +9,5 @@ export default function LoginPage() {
     </div>
   );
 }
+
+export default LoginPage;

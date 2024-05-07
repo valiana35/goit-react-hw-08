@@ -2,7 +2,7 @@ import DocumentTitle from '../components/DocumentTitle';
 import RegistrationForm from '../components/RegistrationForm/RegistrationForm';
 
 
-export default function RegistrationPage() {
+function RegistrationPage() {
   return (
     <div>
       <DocumentTitle>Registration</DocumentTitle>
@@ -10,3 +10,5 @@ export default function RegistrationPage() {
     </div>
   );
 }
+
+export default RegistrationPage;
