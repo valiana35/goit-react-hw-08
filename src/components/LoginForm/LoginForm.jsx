@@ -27,7 +27,7 @@ const LoginForm = () => {
       </label>
       <label className={css.label}>
         Password
-        <input type="password" name="password" />
+        <input type="password" name="password" autoComplete='off'/>
       </label>
       <button type="submit">Log In</button>
     </form>

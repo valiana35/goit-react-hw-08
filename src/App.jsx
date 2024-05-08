@@ -1,4 +1,4 @@
-import { lazy, useEffect } from 'react';
+import { Suspense, lazy, useEffect } from 'react';
 import './App.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectIsRefreshing } from './redux/auth/selectors';
@@ -25,12 +25,14 @@ const App = () => {
         <b>Refreshing user...</b>
     ) : (
         <Layout>
+          <Suspense>
             <Routes>
                 <Route path='/' element={<HomePage />} />
                 <Route path='/register' element={<RestrictedRoute redirectTo='/contacts' component={<RegistrationPage />} />} />
                 <Route path='/login' element={<RestrictedRoute redirectTo='/contacts' component={<LoginPage />} />} />
                 <Route path='/contacts' element={<PrivateRoute redirectTo='/login' component={<ContactsPage />} />} />
             </Routes>
+          </Suspense>
         </Layout>
     )
 }
