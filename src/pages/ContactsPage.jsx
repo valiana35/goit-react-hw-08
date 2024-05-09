@@ -24,6 +24,7 @@ function ContactsPage() {
   return (
     <>
       <DocumentTitle>Phonebook</DocumentTitle>
+      <h2 className="title">Phonebook</h2>
       <ContactForm />
       <SearchBox />
       {isLoading && <p className="text">Loading...</p>}
