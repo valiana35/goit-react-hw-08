@@ -2,7 +2,7 @@ import { FaUser, FaPhone } from "react-icons/fa6";
 import css from "./Contact.module.css";
 import { RiDeleteBinLine } from "react-icons/ri";
 import { useDispatch } from "react-redux";
-import { deleteContact } from "../../redux/contacts/operations";
+import { openModal } from "../../redux/modal/slice";
 
 const Contact = ({ id, name, number }) => {
   const dispatch = useDispatch();
@@ -20,7 +20,7 @@ const Contact = ({ id, name, number }) => {
       <button
         type="button"
         className={css.deleteBtn}
-        onClick={() => dispatch(deleteContact(id))}
+        onClick={() => dispatch(openModal(id))}
       >
         <RiDeleteBinLine size={28} />
       </button>

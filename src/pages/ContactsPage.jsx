@@ -10,12 +10,16 @@ import ContactForm from "../components/ContactForm/ContactForm";
 import { useEffect } from "react";
 import SearchBox from "../components/SearchBox/SearchBox";
 import ContactList from "../components/ContactList/ContactList";
+import { selectIsOpen } from "../redux/modal/selectors";
+import ContactModal from "../components/ContactModal/ContactModal";
+
 
 function ContactsPage() {
   const dispatch = useDispatch();
   const contacts = useSelector(selectContacts);
   const error = useSelector(selectError);
   const isLoading = useSelector(selectIsLoading);
+  const isOpen = useSelector(selectIsOpen);
 
   useEffect(() => {
     dispatch(fetchContacts());
@@ -30,6 +34,7 @@ function ContactsPage() {
       {isLoading && <p className="text">Loading...</p>}
       {error && <p className="text">Something went wrong...</p>}
       {contacts && <ContactList />}
+      {isOpen && <ContactModal />}
     </>
   );
 }
