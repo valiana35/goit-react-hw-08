@@ -1,6 +1,7 @@
 import { useDispatch } from "react-redux";
 import { register } from "../../redux/auth/operations";
 import css from "./RegistrationForm.module.css";
+import Button from '@mui/material/Button';
 
 const RegistrationForm = () => {
     const dispatch = useDispatch();
@@ -34,7 +35,7 @@ const RegistrationForm = () => {
         Password
         <input type="password" name="password" autoComplete="off"/>
       </label>
-      <button type="submit">Register</button>
+      <Button variant="contained" type="submit">Register</Button>
     </form>
     )
 }

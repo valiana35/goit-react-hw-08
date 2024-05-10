@@ -4,6 +4,7 @@ import * as Yup from 'yup';
 import css from './ContactForm.module.css';
 import { useDispatch } from 'react-redux';
 import { addContact } from '../../redux/contacts/operations';
+import Button from '@mui/material/Button';
 
 const FeedBackSchema = Yup.object().shape({
     name: Yup.string().trim().min(3, "Too short!").max(50, "Too long!").required("Required"),
@@ -46,7 +47,7 @@ const ContactForm = () => {
                     <Field className={css.input} type="string" name="number" id={numberFieldId} />
                     <ErrorMessage name="number" as="span" />
                 </div>
-                <button className={css.formBtn} type="submit">Add contact</button>
+                <Button variant="contained" type="submit">Add contact</Button>
             </Form>
            </Formik>
     );

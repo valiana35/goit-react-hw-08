@@ -3,16 +3,19 @@ import Navigation from '../Navigation/Navigation';
 import UserMenu from '../UserMenu/UserMenu';
 import AuthNav from '../AuthNav/AuthNav';
 import { selectIsLoggedIn } from '../../redux/auth/selectors';
-import css from './AppBar.module.css';
+import Header from '../Header';
+import Toolbar from '@mui/material/Toolbar';
 
 const AppBar = () => {
   const isLoggedIn = useSelector(selectIsLoggedIn);
 
   return (
-    <header className={css.header}>
+    <Header>
+      <Toolbar>
       <Navigation />
       {isLoggedIn ? <UserMenu /> : <AuthNav />}
-    </header>
+      </Toolbar>
+    </Header>
   );
 };
 
